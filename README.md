@@ -1,3 +1,28 @@
+
+-----
+I don't know why. This is the offical **universal_robot_ros_driver**  package from the Universal Robot.
+
+However, it will make error when combined with the official **universial_robot** package from ros-industrial.
+
+```bash
+ error: ‘ur_msgs::SetPayload::Request {aka struct ur_msgs::SetPayloadRequest_<std::allocator<void> >}’ has no member named ‘center_of_gravity’
+             << " set_payload(" << req.payload << ", [" << req.center_of_gravity.x << ", " << req.center_of_gravity.y
+                                                    
+```
+
+
+It will make another error when it is with Barry-Liang/my_universal_robot package.
+
+According to the original readme, until now, it should be built with fmauch's calibration-devel.
+
+```bash
+# clone fork of the description. This is currently necessary, until the changes are merged upstream.
+$ git clone -b calibration_devel https://github.com/fmauch/universal_robot.git src/fmauch_universal_robot
+```
+------
+
+
+
 [![Build badge](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/workflows/Industrial%20CI%20pipeline/badge.svg?branch=master&event=push)](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/actions)
 
 # Universal_Robots_ROS_Driver
